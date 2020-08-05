@@ -13,6 +13,7 @@ export LATEX_CODE
 
 
 all:
+	python fetch_pdfs.py references.bib html/
 	python bibliogra.py -H header.tpl -F footer.tpl -f references.bib html/
 
 pdf:

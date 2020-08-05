@@ -500,11 +500,12 @@ def main(output_dir,
     footer = read_file(footer_file)
 
     # Write HTML files sorted by year and reverse year.
-    write_file(os.path.join(output_dir, "index.html"),
-               header + sort_by_year(bibdata, output_dir) + footer)
     write_file(os.path.join(output_dir, "year.html"),
                header + sort_by_year(bibdata, output_dir) + footer)
     write_file(os.path.join(output_dir, "year_reverse.html"),
+               header + sort_by_year(bibdata, output_dir,
+                                     sort_reverse=True) + footer)
+    write_file(os.path.join(output_dir, "index.html"),
                header + sort_by_year(bibdata, output_dir,
                                      sort_reverse=True) + footer)
 
