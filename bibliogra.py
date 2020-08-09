@@ -179,11 +179,25 @@ def print_misc(bib_entry):
     """
     Convert the given BibTeX stuff to HTML.
     """
-
     year = bib_entry.fields.get("year", "")
 
     return ("<span class=\"venue\">Miscellaneous</span>, %s\n" %
             latex_to_html(year))
+
+
+def print_online(bib_entry):
+    """
+    Convert the given Bibtex entry to HTML
+    """
+    year = bib_entry.fields.get("year", "")
+    if "url" in bib_entry.fields:
+        url = bib_entry.fields["url"]
+        return ("<span class=\"venue\">Webpage</span>, <a href=\"%s\">%s</a/>, %s\n" %
+                (html.escape(url), html.escape(url), latex_to_html(year)))
+    else:
+        return ("<span class=\"venue\">Website</span>, %s\n" %
+                latex_to_html(year))
+
 
 
 conversion_table = {
@@ -195,6 +209,7 @@ conversion_table = {
     "book": print_book,
     "phdthesis": print_phdthesis,
     "misc": print_misc,
+    "online": print_online
 }
 
 
@@ -295,7 +310,7 @@ def format_html(key, bib_entry, output_dir, hilight=None):
         html.append(format_authors(bib_entry.persons, hilight))
         html.append("</span>")
     except IndexError as err:
-        print >> sys.stderr, "[+] %s" % err
+        print("[+] %s" % err)
 
     # Add venue/publication type.
 
@@ -348,7 +363,7 @@ def sort_by_year(bibdata, output_dir, sort_reverse=False):
             return 0
 
     for bibkey in sorted(bibdata.entries.keys(),
-                         key=lambda k: (get_year(k), get_venue(k)),
+                         key=lambda k: get_year(k),
                          reverse=sort_reverse):
 
         if not year:
@@ -363,7 +378,7 @@ def sort_by_year(bibdata, output_dir, sort_reverse=False):
             html.append(format_html(bibkey, bibdata.entries[bibkey],
                                     output_dir, hilight=str(year)))
         except NotImplementedError as err:
-            print >> sys.stderr, "[+] %s" % err
+            print("[+] %s" % err)
             continue
 
     html.append("</ul>\n")
@@ -407,7 +422,7 @@ def sort_by_author(bibdata, output_dir, sort_reverse=False):
                                         output_dir,
                                         hilight=author))
         except NotImplementedError as err:
-            print >> sys.stderr, "[+] %s" % err
+            print("[+] %s" % err)
             continue
 
         html.append("</ul>\n<ul>\n")
