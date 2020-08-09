@@ -181,6 +181,9 @@ def print_misc(bib_entry):
     """
     year = bib_entry.fields.get("year", "")
 
+    if "language" in bib_entry.fields:
+        return ("<span class=\"venue\">Miscellaneous</span> (%s), %s\n" %
+                (bib_entry.fields["language"], latex_to_html(year)))
     return ("<span class=\"venue\">Miscellaneous</span>, %s\n" %
             latex_to_html(year))
 
