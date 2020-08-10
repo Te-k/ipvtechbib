@@ -153,7 +153,8 @@
         IPVTechBib is an online archive of selected research papers on Technology
         used in Intimate Partner violence. The icons next to each paper make
         it easy to download, cite, and link to papers. If you think I missed a paper,
-        <a href="https://www.randhome.io/contact/">let me know</a>.
+        <a href="https://www.randhome.io/contact/">let me know</a>. This page was largely
+        inspired by the great <a href="https://censorbib.nymity.ch/">Censorbib</a> webpage.
         You can sort papers by
         <a href="year.html">year</a>,
         <a href="year_reverse.html">reverse year</a> (default),
