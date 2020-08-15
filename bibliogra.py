@@ -25,6 +25,7 @@ import argparse
 import html
 import latexcodec
 import pybtex.database.input.bibtex as bibtex
+import datetime
 
 
 def latex_to_html(string):
@@ -516,6 +517,12 @@ def main(output_dir,
 
     header = read_file(header_file)
     footer = read_file(footer_file)
+
+    # Quick and dirty way to update last update time
+    # TODO : add a proper templating system
+    if "%%LASTUPDATE%%" in header:
+        now = datetime.datetime.now()
+        header = header.replace("%%LASTUPDATE%%", now.strftime("%Y-%m-%d"))
 
     # Write HTML files sorted by year and reverse year.
     write_file(os.path.join(output_dir, "year.html"),
