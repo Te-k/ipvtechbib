@@ -171,7 +171,7 @@
       <div class="menu-item">
         <img class="top-icon" src="img/update-icon.svg" alt="update icon"/>
         <a
-        href="https://github.com/Te-k/ipvtechbib/commits/master">Last update: 2020-08-10</a>
+        href="https://github.com/Te-k/ipvtechbib/commits/master">Last update: 2020-08-15</a>
       </div>
       <div class="menu-item">
         <img class="top-icon" src="img/user.svg" alt="donate icon"/>
