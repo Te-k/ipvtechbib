@@ -149,6 +149,8 @@
     </div>
 
     <div id="header-left">
+      <p><b>Content Warning: this page contains content related to intimate partner
+      violence</b></p><br/>
       <p>
         IPVTechBib is an online archive of selected research papers on Technology
         used in Intimate Partner violence. The icons next to each paper make
@@ -160,7 +162,11 @@
         <a href="year_reverse.html">reverse year</a> (default),
         <a href="author.html">author</a>, and
         <a href="author_reverse.html">reverse author</a>.
-      </p>
+      </p><br/>
+      <p>If you are victim of surveillance in an intimate relationship, you can get
+      support from organisations such as <a href="https://nnedv.org/">the National Network
+      to End Domestic Violence</a> in the US, the <a href="https://www.refuge.org.uk/">
+      Refuge for women and children against domestic violence</a> in UK, or <a href="http://www.solidaritefemmes.org/">la fédération nationale Solidarité France</a> en France.</p>
     </div>
 
     <div id="header-right">
