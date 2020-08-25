@@ -79,9 +79,9 @@ def author_to_string(author):
     Convert a `Person' object to string.
     """
 
-    first = " ".join(author.first())
-    middle = " ".join(author.middle())
-    last = " ".join(author.last())
+    first = " ".join(author.first_names)
+    middle = " ".join(author.middle_names)
+    last = " ".join(author.last_names)
 
     return " ".join([name for name in [first, middle, last] if name])
 
@@ -233,7 +233,7 @@ def format_authors(persons, hilight):
 
     for person in persons[author_type]:
         authors_list.append(
-            " ".join(person.first() + person.middle() + person.last()))
+            " ".join(person.first_names + person.middle_names + person.last_names))
 
     #authors_list = [authors.decode("latex") for authors in authors_list]
     authors_list = [authors for authors in authors_list]
