@@ -106,12 +106,24 @@ def print_inproceedings(bib_entry):
     """
     Convert the given BibTeX inproceedings to HTML.
     """
-
     booktitle = bib_entry.fields.get("booktitle", "")
     publisher = bib_entry.fields.get("publisher", "")
     year = bib_entry.fields.get("year", "")
 
     return ("In Proc. of: <span class=\"venue\">%s</span>, %s, %s\n" %
+            (latex_to_html(booktitle), latex_to_html(year),
+             latex_to_html(publisher)))
+
+
+def print_incollection(bib_entry):
+    """
+    Convert the given BibTeX incollection to HTML.
+    """
+    booktitle = bib_entry.fields.get("booktitle", "")
+    publisher = bib_entry.fields.get("publisher", "")
+    year = bib_entry.fields.get("year", "")
+
+    return ("In Coll. of: <span class=\"venue\">%s</span>, %s, %s\n" %
             (latex_to_html(booktitle), latex_to_html(year),
              latex_to_html(publisher)))
 
@@ -208,6 +220,7 @@ conversion_table = {
     "article": print_article,
     "techreport": print_techreport,
     "inproceedings": print_inproceedings,
+    "incollection": print_incollection,
     "proceedings": print_proceedings,
     "inbook": print_inbook,
     "book": print_book,

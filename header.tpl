@@ -171,7 +171,7 @@
 
     <div id="header-right">
       <div class="menu-item">
-        <img class="top-icon" src="img/hashtag.svg" alt="source code hashtag"/>
+        <img class="top-icon" src="img/book.svg" alt="source code book"/>
         %%COUNT%% Papers
       </div>
       <div class="menu-item">
