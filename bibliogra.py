@@ -524,6 +524,9 @@ def main(output_dir,
         now = datetime.datetime.now()
         header = header.replace("%%LASTUPDATE%%", now.strftime("%Y-%m-%d"))
 
+    if "%%COUNT%%" in header:
+        header = header.replace("%%COUNT%%", str(len(bibdata.entries)))
+
     # Write HTML files sorted by year and reverse year.
     write_file(os.path.join(output_dir, "year.html"),
                header + sort_by_year(bibdata, output_dir) + footer)

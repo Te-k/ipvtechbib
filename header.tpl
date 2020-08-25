@@ -171,6 +171,10 @@
 
     <div id="header-right">
       <div class="menu-item">
+        <img class="top-icon" src="img/hashtag.svg" alt="source code hashtag"/>
+        %%COUNT%% Papers
+      </div>
+      <div class="menu-item">
         <img class="top-icon" src="img/code-icon.svg" alt="source code icon"/>
         <a href="https://github.com/Te-k/ipvtechbib">IPVTechBib code</a>
       </div>
