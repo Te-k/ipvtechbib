@@ -407,32 +407,26 @@ def sort_by_author(bibdata, output_dir, sort_reverse=False):
     """
     Convert BibTeX data to HTML code sorted by (reverse) author.
     """
-
     publications = {}
     html = []
 
     # Populate the dictionary `publications' whose keys are author names and
     # whose values are publications of the respective author.
-
     for bibkey in bibdata.entries:
-
         if len(bibdata.entries[bibkey].persons.values()) == 0:
             continue
 
-        for author in bibdata.entries[bibkey].persons.values()[0]:
-
+        for author in list(bibdata.entries[bibkey].persons.values())[0]:
             if author_to_string(author) in publications:
                 publications[author_to_string(author)].append(bibkey)
             else:
                 publications[author_to_string(author)] = [bibkey]
-
     html.append("<ul>\n")
     author = None
 
     for author in sorted(publications.keys(),
                          key=lambda name: name.split(' ')[-1],
                          reverse=sort_reverse):
-
         try:
             for bibkey in publications[author]:
                 html.append(format_html(bibkey, bibdata.entries[bibkey],
@@ -441,7 +435,6 @@ def sort_by_author(bibdata, output_dir, sort_reverse=False):
         except NotImplementedError as err:
             print("[+] %s" % err)
             continue
-
         html.append("</ul>\n<ul>\n")
 
     html.pop(-1)
