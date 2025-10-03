@@ -1,6 +1,6 @@
 # Bibliography on Technology Used in Intimate Partner Violence
 
-Selected bibliography on technology used in intimate partner violence, see it live at [https://ipvtechbib.randhome.io/](https://ipvtechbib.randhome.io/).
+Selected bibliography on technology used in intimate partner violence, see it live at [https://ipvtechbib.maynier.eu/](https://ipvtechbib.maynier.eu/).
 
 If you see any paper or article on this topic that is missing, please [open an issue](https://github.com/Te-k/ipvtechbib/issues) or contact me.
 
